@@ -167,6 +167,7 @@
       
   <script>
     $('form.subscribe').on('submit', function(e) {
+      e.preventDefault();
       var emailField = $("#id_email");
       var email = emailField.val();
       if (emailField.get(0).validity.valid && email.length) {
@@ -176,6 +177,7 @@
           "Email": email,
           "List": "website subscriber",
         });
+        $(this).html("Thank you for subscribing!");
       }
     });
   </script>
